@@ -1,0 +1,44 @@
+<- Vector ----------------------------------------------------------------------
+The Vector class handles space 3D vectors.
+More than three coordinates, it has got an homogenous parameter.
+
+An instance is contructed from the three x,y,z values:
+new Vector( array( 'dest' => Vertex $dest);
+
+'orig' for origin of vector can be add in the constructor aswell :
+new Vector( array( 'dest' => Vertex $dest 'orig' => Vertex $orig );
+
+float magnitude()
+		retourne la longueur (ou "norme") du vecteur.
+
+Attributes are private, you may want to use getter.
+
+	Vertex   getX();
+	Vertex   getY();
+	Vertex   getZ();
+	Vertex   getW();
+
+Return the normalize vector :
+	Vector normalize()
+
+Return the sum of two vectors :
+	Vector add( Vector $rhs )
+
+Return the substraction of two vectors :
+	Vector sub( Vector $rhs )
+
+Return the opposite vector :
+	Vector opposite()
+
+Return the scalar product between vector and value :
+	Vector scalarProduct( $k )
+
+Return scalar product between two vectors :
+	float dotProduct( Vector $rhs )
+
+Return the cosinus of angle between two vectors :
+	float cos( Vector $rhs )
+
+Return the cross product of two vectors (right hand) :
+	Vector crossProduct( Vector $rhs )
+---------------------------------------------------------------------- Vector ->
