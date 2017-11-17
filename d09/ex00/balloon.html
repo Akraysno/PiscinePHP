@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Balloon</title>
+		<script>
+			function click_balloon(id) {
+				var ball = document.getElementById(id);
+				var height = parseInt(ball.style.height);
+				var width = parseInt(ball.style.width);
+				var radius = parseInt(ball.style.borderRadius);
+				var color = ball.style.backgroundColor;
+				if (height < 419) {
+					height += 10;
+					width += 10;
+					radius = height / 2;
+				}
+				else {
+					height = 200;
+					width = 200;
+					radius = 100;
+				}
+				if (color === "red") {
+					color = "green";
+				} else if (color === "blue") {
+					color = "red";
+				} else if (color === "green") {
+					color = "blue";
+				}
+				ball.style.height = height + "px";
+				ball.style.width = width + "px";
+				ball.style.borderRadius = radius + "px";
+				ball.style.backgroundColor = color;
+			}
+			function cursor(id) {
+				var ball = document.getElementById(id);
+				var height = parseInt(ball.style.height);
+				var width = parseInt(ball.style.width);
+				var radius = parseInt(ball.style.borderRadius);
+				var color = ball.style.backgroundColor;
+				if (height > 200) {
+					height -= 5;
+					width -= 5;
+					radius = height / 2;
+				}
+				if (color === "red") {
+					color = "blue";
+				} else if (color === "blue") {
+					color = "green";
+				} else if (color === "green") {
+					color = "red";
+				}
+				ball.style.height = height + "px";
+				ball.style.width = width + "px";
+				ball.style.borderRadius = radius + "px";
+				ball.style.backgroundColor = color;
+			}
+		</script>
+	</head>
+	<body>
+		<div id="content">
+			<div id="balloon" onmouseout="cursor('balloon');" onclick="click_balloon('balloon');" style="height: 200px; width: 200px; border-radius: 100px; background-color: red; margin-left: 250px; margin-top: 250px;"></div>
+		</div>
+	</body>
+</html>

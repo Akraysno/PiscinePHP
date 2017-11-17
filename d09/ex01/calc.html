@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Calc</title>
+		<script>
+			function calc(num1, ope, num2) {
+				var nb1 = parseInt(document.getElementById(num1).value);
+				var cal = document.getElementById(ope).value;
+				var nb2 = parseInt(document.getElementById(num2).value);
+				var res = 0;
+				if (nb1 < 0 || nb2 < 0 || isNaN(nb1) || isNaN(nb2)) {
+					console.log("Error :(");
+					alert("Error :(");
+				}
+				else if ((cal === "/" || cal === "%") && nb2 === 0) {
+					console.log("It’s over 9000!");
+					alert("It’s over 9000!");
+				}
+				else {
+					if (cal === "+")
+						res = nb1 + nb2;
+					if (cal === "-")
+						res = nb1 - nb2;
+					if (cal === "*")
+						res = nb1 * nb2;
+					if (cal === "/")
+						res = nb1 / nb2;
+					if (cal === "%")
+						res = nb1 % nb2;
+					console.log(res);
+					alert(res);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="num1"/>
+		<select id="ope">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input type="text" id="num2"/>
+		<br />
+		<input type="submit" value="Try me!" onclick="calc('num1', 'ope' ,'num2');"/>
+		<script>
+				setInterval("alert('Please, use me...')", 30000);
+		</script>
+	</body>
+</html>
